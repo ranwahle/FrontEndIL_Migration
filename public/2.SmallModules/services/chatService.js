@@ -10,7 +10,6 @@
         var self = this;
         _socket.on('chat message', self.messageReceived);
         _socket.on('topics',function(topics) { self.topicsLoaded.call(self, topics);});
-
         _socket.on('previousMessages', function(messages){
             messages.forEach(function(message){
                 self.messageReceived(message);
@@ -33,10 +32,10 @@
     service.prototype.messageReceived =  function(message){
         _messages.push(message);
       var topic = _topics[message.topic];
-        if (!topic){
-            return;
-        }
-
+      if (!topic){
+         // _topics[message.topic] = [];
+          return;
+      }
         topic.forEach(function(callback){
            callback(message.message);
         });
@@ -90,6 +89,6 @@
 
 
 
-    angular.module('chatApp').service('chatService',[service]);
+    angular.module('chatApp.chatService',[]).service('chatService',[service]);
 
 }(window.angular));

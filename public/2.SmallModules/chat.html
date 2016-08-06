@@ -1,0 +1,11 @@
+<h2>Wellcome to {{chatController.topicName}}</h2>
+
+<ul id="messages">
+    <li data-ng-repeat="message in chatController.messages track by $index">{{message}}</li>
+</ul>
+
+
+<input id="m" autocomplete="off" data-ng-model="chatController.messageToSend" />
+<button data-ng-click="chatController.sendMessage()">Send</button>
+
+<br/>

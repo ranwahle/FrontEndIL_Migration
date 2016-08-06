@@ -2,7 +2,7 @@ let app = require('express')();
 let http = require('http').Server(app);
 let io = require('socket.io')(http);
 let express = require('express');
-let topics = [];
+let topics = [], messages = [] ;
 
 
 app.get('/', function(req, res){
@@ -19,6 +19,7 @@ io.on('connection', function(socket){
     socket.on('disconnect', function(){
         console.log('user disconnected');
     });
+    socket.emit('previousMessages', messages);
 
     socket.on('loadTopics', () =>{
         console.log('load Topcis request');
@@ -35,7 +36,7 @@ io.on('connection', function(socket){
     io.emit('newUser', user);
     });
     socket.on('chat message', msg => {
-        console.log('message: ', msg);
+       messages.push(msg);
         io.emit('chat message', msg);
     });
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/main.css" type="text/css" />
+    <script src="/requirejs/require.js" data-main="require.config"></script>
+    <!--<script src="/angular/angular.min.js"></script>-->
+    <!--<script src="/angular-route/angular-route.min.js"></script>-->
+    <!--<script src="/socket.io/socket.io.js"></script>-->
+    <!--<script src="app.js"></script>-->
+    <!--<script src="services/chatService.js"></script>-->
+    <!--<script src="controllers/mainController.js"></script>-->
+    <!--<script src="controllers/chatController.js"></script>-->
+    <title>3. Modules</title>
+</head>
+<body>
+<div data-ng-controller="mainController as mainController">
+    <div style="float:left;">
+
+    </div>
+    <div style="float:left;">
+        <ul>
+            <li data-ng-repeat="topic in mainController.topics">
+               <a href="#/topics/{{topic}}"> {{topic}}</a>
+            </li>
+        </ul>
+
+
+        <input type="text" placeholder="Topic Name" data-ng-model="mainController.topicToAdd"/>
+        <button data-ng-click="mainController.addTopic()">Add topic</button>
+    </div>
+    <div style="float: left;">
+        <ng-view></ng-view>
+    </div>
+</div>
+</body>
+</html>
