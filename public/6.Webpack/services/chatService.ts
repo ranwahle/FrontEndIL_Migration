@@ -2,12 +2,20 @@
  * Created by ranwahle on 04/08/2016.
  */
 
+import "socket.io-client";
+import "angular";
 
-require(['socketIo'],
-    function(io){
+
+declare var io : {
+    connect(url: string): Socket;
+}
+interface Socket {
+    on(event: string, callback: (data: any) => void );
+    emit(event: string, data: any);
+}
 
 
-     class service {
+     export class service {
         private _socket:any;
         private _topics:any = {};
         private _events:any = {};
@@ -18,7 +26,7 @@ require(['socketIo'],
         }
 
         constructor() {
-            this._socket = io();
+            this._socket =  io.connect(null);
 
             let self = this;
             this._socket.on('chat message', message =>  self.messageReceived.call(self, message));
@@ -104,4 +112,3 @@ require(['socketIo'],
 
     angular.module('chatApp.chatService', []).service('chatService', [service]);
 
-});

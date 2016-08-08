@@ -9,9 +9,14 @@ app.get('/', function(req, res){
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/dist', function(req, res){
+    res.sendFile(__dirname + '/dist/index.html');
+});
+
+
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
-
+app.use(express.static('dist'));
 io.on('connection', function(socket){
     //
 

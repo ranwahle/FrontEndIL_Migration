@@ -5,7 +5,7 @@
 
 (function(angular){
 
-    var app = angular.module('chatApp',['ngRoute','chatApp.chatComponent', 'chatApp.mainController']);
+    var app = angular.module('chatApp',['ngRoute','chatApp.chatComponent', 'chatApp.mainComponent']);
 
     app.config(['$routeProvider', function($routeProvider){
         $routeProvider.when('/topics/:topicName',{
