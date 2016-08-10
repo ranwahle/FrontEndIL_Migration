@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/8.migrateComponents/dist/">
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="../styles/main.css" type="text/css" />-->
+    <!--<script src="/requirejs/require.js" data-main="require.config"></script>-->
+    <!--<script src="/angular/angular.min.js"></script>-->
+    <!--<script src="/angular-route/angular-route.min.js"></script>-->
+    <script src="/socket.io/socket.io.js"></script>
+    <!--<script src="app.js"></script>-->
+    <!--<script src="services/chatService.js"></script>-->
+    <!--<script src="controllers/mainController.js"></script>-->
+    <!--<script src="controllers/chatController.js"></script>-->
+    <title>8. MigrateComponents</title>
+</head>
+<body>
+<div style="float:left;">
+    <main-component></main-component>
+</div>
+
+<div style="float;left;" ng-view></div>
+<script src="/core-js/client/shim.min.js"></script>
+<script src="/zone.js/dist/zone.js"></script>
+<script src="/reflect-metadata/Reflect.js"></script>
+<!--<script src="/node_modules/systemjs/dist/system.src.js"></script>-->
+<!--<script src="/systemjs.config.js"></script>-->
+<!--<script>-->
+    <!--System.import('/app');-->
+<!--</script>-->
+</body>
+</html>

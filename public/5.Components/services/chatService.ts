@@ -1,9 +1,7 @@
 /**
  * Created by ranwahle on 04/08/2016.
- */
-
-
-define(['socketIo'],
+ * **/
+ require(['socketIo'],
     function(io){
 
 

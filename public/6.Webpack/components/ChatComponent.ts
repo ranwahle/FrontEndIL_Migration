@@ -2,6 +2,8 @@
  * Created by ranwahle on 06/08/2016.
  */
 import "../services/ChatService";
+import "angular-ui-router";
+
 
    export class controller {
 
@@ -38,9 +40,9 @@ import "../services/ChatService";
         };
     }
 
-    controller.$inject = ['chatService', '$routeParams', '$scope'];
+    controller.$inject = ['chatService', '$stateParams', '$scope'];
 
-    angular.module('chatApp.chatComponent',['chatApp.chatService']).component('chatComponent',{
+    angular.module('chatApp.chatComponent',['chatApp.chatService','ui.router']).component('chatComponent',{
         controller: controller,
         controllerAs: 'chatController',
        template: `<h2>Wellcome to {{chatController.topicName}}</h2>

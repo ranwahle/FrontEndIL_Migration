@@ -47,7 +47,7 @@ import "../services/ChatService";
         <button data-ng-click="mainController.addTopic()">Add topic</button>
     </div>
     <div style="float: left;">
-        <ng-view></ng-view>
+        <ui-view></ui-view>
     </div>
 </div>
 `,

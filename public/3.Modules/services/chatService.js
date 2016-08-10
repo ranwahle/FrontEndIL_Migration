@@ -1,7 +1,7 @@
 /**
  * Created by ranwahle on 04/08/2016.
  */
-define(['socketIo'], function(io){
+require(['socketIo'], function(io){
     var _socket, _topics = {}, _events = {}, _messages = [];
     var service = function(){
         _socket = io();

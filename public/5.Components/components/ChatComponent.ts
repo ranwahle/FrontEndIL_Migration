@@ -35,9 +35,11 @@
         sendMessage() {
             this._chatService.sendMessage(this.topicName, this.messageToSend);
         };
+
+        static $inject = ['chatService', '$routeParams', '$scope'];
     }
 
-    controller.$inject = ['chatService', '$routeParams', '$scope'];
+
 
     angular.module('chatApp.chatComponent',['chatApp.chatService']).component('chatComponent',{
         controller: controller,

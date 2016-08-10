@@ -4,17 +4,17 @@
 import "./components/ChatComponent";
 import "./components/mainComponent";
 import "../styles/main.css";
-import "angular-route/angular-route.js";
-
+//import "angular-route/angular-route.js";
+//import "angular-ui-router"
 import "angular";
 
 
 
-var app = angular.module('chatApp', ['ngRoute', 'chatApp.chatComponent',
+var app = angular.module('chatApp', [require('angular-ui-router'), 'chatApp.chatComponent',
     'chatApp.mainComponent']);
 
-app.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider.when('/topics/:topicName', {
+app.config(['$stateProvider', function ($stateProvider) {
+    $stateProvider.state('topic',{url: '/topics/:topicName',
         template : '<chat-component></chat-component>'
         //controller: 'chatController',
         //controllerAs: 'chatController'

@@ -6,7 +6,7 @@ module.exports = {
     entry: ['./public/6.webpack/app.ts'],
     output: {
         filename: 'build.js',
-        path: 'dist'
+        path: './public/6.webpack/dist'
     },
     resolve: {
         root: __dirname,
